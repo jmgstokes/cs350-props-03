@@ -1,0 +1,20 @@
+<!-- distance.html -->
+{% extends "core/base.html" %}
+
+{% block page_header %}Search For Properties{% endblock page_header %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <form action="." method="get"> 
+            {{ form.as_p }}
+            <input type="submit" value="Find the properties within a distance to an address."/>
+        </form>
+    </div>
+    <div class="col">
+        {% for r in result %}
+            <p><a href="{{% url 'properties:detail' r.pk %}}"><a/></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

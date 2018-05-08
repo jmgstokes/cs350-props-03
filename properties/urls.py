@@ -15,4 +15,7 @@ urlpatterns = [
 
 # http://localhost:8000/property/1/
     url(r'^(?P<pk>[0-9]+)/$', views.PropertyDetailView.as_view(), name='detail'),
+
+    url(r'^search/$', views.SearchFormView.as_view(), name='search'),
+    url(r'^distance/$', views.PropertyDistanceSearch.as_view(), name='distance'),
 ]
